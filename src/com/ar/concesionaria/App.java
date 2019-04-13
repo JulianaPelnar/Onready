@@ -12,9 +12,6 @@ public class App {
 		ConcesionariaUtils.minPrice(c);
 		ConcesionariaUtils.hasLetter(c);
 		ConcesionariaUtils.sortByPrice(c);
-
-		System.out.println("=============================");
-		ConcesionariaUtils.printList(c);
 	}
 
 }

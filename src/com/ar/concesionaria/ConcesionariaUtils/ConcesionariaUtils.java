@@ -5,9 +5,24 @@ import com.ar.concesionaria.models.Vehiculo;
 
 public abstract class ConcesionariaUtils {
 	
+	// Método que no imprime espacios
+	/*
 	public static void printList(Concesionaria c) {
 		for (Vehiculo veh : c.getLista()) {
 			System.out.println(veh);
+		}
+		System.out.println("=============================");
+	}*/
+	
+	public static void printList(Concesionaria c) {
+		int i = 0;
+		int j = c.getLista().size();
+		for (i = 0; i < j ; i++) {
+			if(i > 0 && i < j - 1) {
+				System.out.println("            " + c.getLista().get(i));
+			} else {
+				System.out.println(c.getLista().get(i));
+			}
 		}
 		System.out.println("=============================");
 	}
@@ -41,7 +56,7 @@ public abstract class ConcesionariaUtils {
 			boolean found = veh.getModelo().contains("Y");
 			if (found) {
 				System.out.println("Vehículo que contiene en el modelo la letra ‘Y’: " + veh.getMarca() +
-						" " + veh.getModelo() + " $" + veh.getPrecio());
+						" " + veh.getModelo() + " $" + veh.printPrecio());
 			}
 		}
 	}

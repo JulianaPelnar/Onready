@@ -4,11 +4,7 @@ public class Auto extends Vehiculo {
 	
 	private int puertas;
 	
-	public void setPuertas(int puertas) {
-		this.puertas = puertas;
-	}
-
-	Auto(String marca, String modelo, int puertas, double precio){
+	Auto(String marca, String modelo, int puertas, Double precio){
 		super.marca = marca;
 		super.modelo = modelo;
 		this.puertas = puertas;
@@ -16,6 +12,7 @@ public class Auto extends Vehiculo {
 	}
 	@Override
 	public String toString() {
-		return "Marca: "+ this.marca + " // Modelo: "+ this.modelo +" // Puertas: "+ this.puertas +" // Precio: $"+ this.precio;
+		return "Marca: "+ this.marca + " // Modelo: "+ this.modelo +" // Puertas: "+ this.puertas + 
+				" // Precio: $" + this.printPrecio();
 	}
 }
