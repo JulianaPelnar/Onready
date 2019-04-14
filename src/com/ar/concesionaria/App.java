@@ -10,7 +10,7 @@ public class App {
 		ConcesionariaUtils.printList(c);
 		ConcesionariaUtils.maxPrice(c);
 		ConcesionariaUtils.minPrice(c);
-		ConcesionariaUtils.hasLetter(c);
+		ConcesionariaUtils.hasLetter(c, "Y");
 		ConcesionariaUtils.sortByPrice(c);
 	}
 

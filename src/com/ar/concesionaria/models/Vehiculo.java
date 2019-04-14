@@ -6,6 +6,8 @@ public class Vehiculo {
 	protected String marca;
 	protected String modelo;
 	
+	public Vehiculo() {}
+	
 	public Double getPrecio() {
 		return this.precio;
 	}
