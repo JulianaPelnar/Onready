@@ -7,15 +7,6 @@ import com.ar.concesionaria.models.Vehiculo;
 
 public abstract class ConcesionariaUtils {
 	
-	// Método que no imprime espacios
-	/*
-	public static void printList(Concesionaria c) {
-		for (Vehiculo veh : c.getLista()) {
-			System.out.println(veh);
-		}
-		System.out.println("=============================");
-	}*/
-	
 	/**PrintList(Concesionaria c) <br><br>
 	 * Prints the list of all elements in the ArrayList 
 	 * of vehicle.
@@ -42,7 +33,7 @@ public abstract class ConcesionariaUtils {
 	 * @param c
 	 */
 	public static void maxPrice(Concesionaria c) {
-		double max = 0.0;
+		double max = c.getLista().get(0).getPrecio();
 		Vehiculo vehAux = new Vehiculo();
 		for (Vehiculo veh : c.getLista()) {
 			if (veh.getPrecio() > max) {
@@ -60,7 +51,7 @@ public abstract class ConcesionariaUtils {
 	 * @param c
 	 */
 	public static void minPrice(Concesionaria c) {
-		double min = 9000000.0;
+		double min = c.getLista().get(0).getPrecio();
 		Vehiculo vehAux = new Vehiculo();
 		for (Vehiculo veh : c.getLista()) {
 			if (veh.getPrecio() < min) {
@@ -87,53 +78,17 @@ public abstract class ConcesionariaUtils {
 		}
 	}
 	
-	
-	/**sortByPrice(Concesionaria c) <br><br>
-	 * Sort elements on the list from more expensive to minus expensive. 
-	 * I consider more understandable to use Comparator interface to sort arrays. 
-	 * Ask about it.
-	 * 
-	 * @param c
-	 */
-	/*
-	public static void sortByPrice(Concesionaria c) {
-		int i, j;
-		Vehiculo veh1, veh2;
-		for(i = 0; i < c.getLista().size() - 1; i++) {
-			for(j = 0; j < c.getLista().size() - 1; j++) {
-				veh1 = c.getLista().get(j);
-				veh2 = c.getLista().get(j + 1);
-				if(veh1.getPrecio() < veh2.getPrecio()) {
-					c.getLista().set(j, veh2);
-					c.getLista().set(j + 1, veh1);
-				}
-			}
-		}
-		System.out.println("=============================");
-		System.out.println("Vehículos ordenados por precio de mayor a menor: ");
-		for(Vehiculo veh : c.getLista()) {
-			System.out.println(veh.getMarca() +" " + veh.getModelo());
-		}
-	}*/
-	
 	/**sortByPriceUsingCollection(Concesionaria c) <br><br>
 	 * Sort elements on the list from more expensive to minus expensive using Comparator interface.
 	 * 
 	 * @param c
 	 */
 	public static void sortByPrice(Concesionaria c) {
+		System.out.println("=============================");
+		System.out.println("Vehículos ordenados por precio de mayor a menor:");
 		Collections.sort(c.getLista(), new SortByPrecio());
 		for(Vehiculo veh : c.getLista()) {
 			System.out.println(veh.getMarca() +" " + veh.getModelo());
 		}
 	}
 }
-
-
-
-
-
-
-
-
-

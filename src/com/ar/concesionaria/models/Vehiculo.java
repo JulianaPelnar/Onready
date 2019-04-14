@@ -27,5 +27,4 @@ public class Vehiculo {
 	    precio.insert(precio.length() - 6, ".");
 	    return precio;
 	}
-
 }

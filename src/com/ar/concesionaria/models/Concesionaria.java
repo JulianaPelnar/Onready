@@ -19,5 +19,4 @@ public class Concesionaria {
 	public ArrayList<Vehiculo> getLista() {
 		return this.lista;
 	}
-	
 }
